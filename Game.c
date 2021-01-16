@@ -16,25 +16,25 @@ void PlayGame(list_t* list)
 
 void Didnt()
 {
-    printf("Simon stays in normal pose\n");
+    printf("Simon stays in normal pose\n\n");
 }
 
 void Dance()
 {
-    printf("Simon dances\n");
+    printf("Simon dances\n\n");
 }
 
 void HandsOnHead()
 {
-    printf("Simon puts hands on head\n");
+    printf("Simon puts hands on head\n\n");
 }
 
 void LeftHandUp()
 {
-    printf("Simon puts left hand up\n");
+    printf("Simon puts left hand up\n\n");
 }
 
 void RightHandUp()
 {
-    printf("Simon puts right hand up\n");
+    printf("Simon puts right hand up\n\n");
 }

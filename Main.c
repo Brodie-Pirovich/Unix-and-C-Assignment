@@ -14,9 +14,10 @@ int main(int argc, char *argv[])
         LoadCommands(tempList, fileName);
         Menu(tempList);
     }
-    
-    list_t* tempList = createList();
-    Menu(tempList);
-
+    else
+    {
+        list_t* tempList = createList();
+        Menu(tempList);
+    }
     return 0;
 }

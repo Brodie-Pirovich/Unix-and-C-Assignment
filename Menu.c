@@ -206,5 +206,4 @@ void DeleteCommands(list_t* list)
 void Exit()
 {
     printf("\nSee you later :) \n");
-    return;
 }
