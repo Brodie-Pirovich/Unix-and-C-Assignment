@@ -46,7 +46,7 @@ void Menu(list_t* list)
         } 
     }  
 
-    Exit();
+    Exit(list);
 }
 
 void GiveCommands(list_t* list)
@@ -200,7 +200,20 @@ void DeleteCommands(list_t* list)
     }
 }
 
-void Exit()
+void Exit(list_t* list)
 {
+    list_node_t* current;
+    FILE * fPtr;
+    fPtr = fopen("commands.txt", "w");
+
+    for(current = list->head; current != NULL; current = current->next)
+    { 
+        fprintf(fPtr, "%s %s\n", current->value.Simon, current->value.SimonCommand);
+    }
+
+    printf("Saving commands\n");
+    fclose(fPtr);
+
+    printf("File created and saved successfully. :) \n");
     printf("\nSee you later :) \n");
 }
