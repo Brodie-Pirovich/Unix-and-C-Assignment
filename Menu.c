@@ -202,7 +202,7 @@ void DeleteCommands(list_t* list)
 
 void Exit(list_t* list)
 {
-    list_node_t* current;
+    /*list_node_t* current;
     FILE * fPtr;
     fPtr = fopen("commands.txt", "w");
 
@@ -214,6 +214,6 @@ void Exit(list_t* list)
     printf("Saving commands\n");
     fclose(fPtr);
 
-    printf("File created and saved successfully.\n");
+    printf("File created and saved successfully.\n");*/
     printf("\nSee you later :) \n");
 }

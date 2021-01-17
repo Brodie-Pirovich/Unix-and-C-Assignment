@@ -1,4 +1,5 @@
-Simon says Right hand up
-Simon says Left hand up
-Simon didn't Say Hands on head
+Simon says Dance
 Simon didn't Say Dance
+Simon didn't Say Hands on head
+Simon says Left hand up
+Simon says Right hand up
