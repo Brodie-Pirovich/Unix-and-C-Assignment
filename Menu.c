@@ -65,7 +65,7 @@ void GiveCommands(list_t* list)
         if(simon == 1)
         {
             command_t* tempCommand = createCommand();
-            strcpy(tempCommand->Simon, "Simon Says");
+            strcpy(tempCommand->Simon, "Simon says");
 
             AssignCommand(tempCommand);
             addToList(list, *tempCommand);
@@ -74,7 +74,7 @@ void GiveCommands(list_t* list)
         else if(simon == 2)
         {
             command_t* tempCommand = createCommand();
-            strcpy(tempCommand->Simon, "Simon Didn't Say");
+            strcpy(tempCommand->Simon, "Simon didn't Say");
 
             AssignCommand(tempCommand);
             tempCommand->cmdFunc = Didnt;
@@ -143,7 +143,7 @@ void LoadCommands(list_t* list, char* fileName)
         {
             sscanf(restOfString, " %5s %255[^\n]", word, command);
             command_t* tempCommand = createCommand();
-            strcpy(tempCommand->Simon, "Simon Says");
+            strcpy(tempCommand->Simon, "Simon says");
             if(strcmp(dance, word) == 0)
             {
                 tempCommand->cmdFunc = Dance;
@@ -176,7 +176,7 @@ void LoadCommands(list_t* list, char* fileName)
         {
             sscanf(restOfString, "%5s %255[^\n]", wordThree, command);
             command_t* tempCommand = createCommand();
-            strcpy(tempCommand->Simon, "Simon Didn't Say");
+            strcpy(tempCommand->Simon, "Simon didn't Say");
             strcpy(tempCommand->SimonCommand, command);
             tempCommand->cmdFunc = Didnt;
             addToList(list, *tempCommand);
@@ -214,6 +214,6 @@ void Exit(list_t* list)
     printf("Saving commands\n");
     fclose(fPtr);
 
-    printf("File created and saved successfully. :) \n");
+    printf("File created and saved successfully.\n");
     printf("\nSee you later :) \n");
 }
