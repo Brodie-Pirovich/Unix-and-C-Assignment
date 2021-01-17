@@ -52,13 +52,12 @@ void Menu(list_t* list)
 void GiveCommands(list_t* list)
 {
     int amount;
-    int i;
     int simon;
 
     printf("Please type an amount of commands to give: \n");
     scanf("%d", &amount);
 
-    for(i = 0; i < amount; i++)
+    for(int i = 0; i < amount; i++)
     {   
         printf("Type 1 for a simon says and 2 for a simon didn't say: \n");
         scanf("%d", &simon);
@@ -86,7 +85,6 @@ void GiveCommands(list_t* list)
             printf("Please type either 1 or 2\n");
         }
     }
-
     printf("Commands given!\n");
 }
 
@@ -118,7 +116,6 @@ void AssignCommand(command_t* cmd)
         default:
             break;
     }
-
 }
 
 void LoadCommands(list_t* list, char* fileName)
