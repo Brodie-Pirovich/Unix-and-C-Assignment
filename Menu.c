@@ -55,7 +55,6 @@ void GiveCommands(list_t* list)
     int amount;
     int i;
     int simon;
-    char cmd[20];
 
     printf("Please type an amount of commands to give: \n");
     scanf("%d", &amount);
@@ -67,49 +66,19 @@ void GiveCommands(list_t* list)
 
         if(simon == 1)
         {
-            int option;
             command_t* tempCommand = createCommand();
-            printf("Please select a valid simon says command: \n");
-            printf("1:Hands on head\n2: Dance\n3: Right hand up\n4: Left hand up\n");
-            scanf("%d", &option);
+            strcpy(tempCommand->Simon, "Simon Says");
 
-            switch (option)
-            {
-            case 1:
-                strcpy(tempCommand->Simon, "Simon Says");
-                strcpy(tempCommand->SimonCommand, "hands on head");
-                tempCommand->cmdFunc = HandsOnHead;
-                break;
-            case 2:
-                strcpy(tempCommand->Simon, "Simon Says");
-                strcpy(tempCommand->SimonCommand, "Dance");
-                tempCommand->cmdFunc = Dance;
-                break;
-            case 3:
-                strcpy(tempCommand->Simon, "Simon Says");
-                strcpy(tempCommand->SimonCommand, "Right hand up");
-                tempCommand->cmdFunc = RightHandUp;
-                break;
-             case 4:
-                strcpy(tempCommand->Simon, "Simon Says");
-                strcpy(tempCommand->SimonCommand, "Left hand up");
-                tempCommand->cmdFunc = LeftHandUp;
-                break;
-            default:
-                break;
-            }
-
+            AssignCommand(tempCommand);
             addToList(list, *tempCommand);
 
         }
         else if(simon == 2)
         {
-            printf("Please type a valid simon didn't say command: \n");
-            scanf("%19s", cmd);
-
             command_t* tempCommand = createCommand();
             strcpy(tempCommand->Simon, "Simon Didn't Say");
-            strcpy(tempCommand->SimonCommand, cmd);
+
+            AssignCommand(tempCommand);
             tempCommand->cmdFunc = Didnt;
             addToList(list, *tempCommand);
         }
@@ -120,6 +89,37 @@ void GiveCommands(list_t* list)
     }
 
     printf("Commands given!\n");
+}
+
+void AssignCommand(command_t* cmd)
+{
+    int option;
+    printf("Please select a valid simon says command: \n");
+    printf("1:Hands on head\n2: Dance\n3: Right hand up\n4: Left hand up\n");
+    scanf("%d", &option);
+
+    switch (option)
+    {
+        case 1:
+            strcpy(cmd->SimonCommand, "hands on head");
+            cmd->cmdFunc = HandsOnHead;
+            break;
+        case 2:
+            strcpy(cmd->SimonCommand, "Dance");
+            cmd->cmdFunc = Dance;
+            break;
+        case 3:
+            strcpy(cmd->SimonCommand, "Right hand up");
+            cmd->cmdFunc = RightHandUp;
+            break;
+        case 4:
+            strcpy(cmd->SimonCommand, "Left hand up");
+            cmd->cmdFunc = LeftHandUp;
+            break;
+        default:
+            break;
+    }
+
 }
 
 void LoadCommands(list_t* list, char* fileName)
