@@ -7,7 +7,6 @@
 
 void Menu(list_t* list)
 {
-    /*list_t* myList = list;*/
     char fileName[10];
 
     int option = 0;

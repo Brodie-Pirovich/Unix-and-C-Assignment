@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -g
 OBJ=Main.o Menu.o LinkedList.o Game.o
-EXEC=test_assignment
+EXEC=simon_says
 
 $(EXEC) : $(OBJ)
 	$(CC) $(OBJ) -o $(EXEC)
