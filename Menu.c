@@ -7,7 +7,7 @@
 
 void Menu(list_t* list)
 {
-    list_t* myList = list;
+    /*list_t* myList = list;*/
     char fileName[10];
 
     int option = 0;
@@ -21,21 +21,21 @@ void Menu(list_t* list)
         switch (option)
         {
         case 1:
-            GiveCommands(myList);
+            GiveCommands(list);
             break;
 
         case 2:
             printf("Enter a file name! \n");
             scanf("%s", fileName);
-            LoadCommands(myList, fileName);
+            LoadCommands(list, fileName);
             break;
 
         case 3:
-            DeleteCommands(myList);
+            DeleteCommands(list);
             break;
 
         case 4:
-            PlayGame(myList);
+            PlayGame(list);
             break;
 
         case 5:
@@ -172,7 +172,8 @@ void LoadCommands(list_t* list, char* fileName)
             {
                 printf("No match\n");
             }  
-            strcpy(tempCommand->SimonCommand, strcat(word,command));          
+            strcpy(word, strcat(word, " "));
+            strcpy(tempCommand->SimonCommand, strcat(word ,command));          
             addToList(list, *tempCommand);
         }
         else

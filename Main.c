@@ -13,11 +13,14 @@ int main(int argc, char *argv[])
         list_t* tempList = createList();
         LoadCommands(tempList, fileName);
         Menu(tempList);
+        freeList(tempList);
     }
     else
     {
         list_t* tempList = createList();
         Menu(tempList);
+        freeList(tempList);
     }
+
     return 0;
 }

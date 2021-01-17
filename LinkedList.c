@@ -40,6 +40,7 @@ void addToList(list_t* list, command_t car)
 void freeList(list_t* list)
 {
     list_node_t* current, *next;
+    current = list->head;
     while(current != NULL)
     {
         next = current->next;
